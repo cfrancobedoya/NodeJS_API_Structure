@@ -1,6 +1,7 @@
 # NodeJS_API_Structure
 In this course we will develop an API in Node, how to serve static files, provide security, work with a good architecture and more.
 
+---
 ## What are and how are HTTP request used?
 An HTTP request is a communication protocol that allows the transfer of information on hte web.
 It is the common language for al communications.
@@ -16,6 +17,7 @@ The client sends a request to the internet, it's sent to the servers, then it's 
 * State: How was the operation.
 * Body: What the server returns.
 
+--- 
 ## Methods, headers and states
 ### HTTP methods:
 * GET: Collect information from the server.
@@ -46,3 +48,48 @@ The client sends a request to the internet, it's sent to the servers, then it's 
     * 404: Not found.
 * 5xx: There was an error processing the request.
     * 500: Internal server error.
+
+---
+## Body and query of the request
+The body of the request is the information itself that we want to send, edit or have the server return to us.
+
+The queries will allow you to add extra information to the data we want to send to the server.
+
+### Body
+The request information.
+* The user data you want to add.
+
+It depends on the headers:
+* Content-Type:
+    * text/html
+    * text/css
+    * application/javascript
+    * image/jpeg
+    * application/xml
+* Content-Length
+
+### REQUEST
+* Post
+* Get
+
+### RESPONSE
+Any method we receive from the server.
+
+### QUERY
+Extra information. Order in wich i want the parameters to return. For example when we pass an id.
+```
+* api.com/person?ordenBy=name&age=25
+```
+
+To share data with the frontend, you should never send sensitive information such as tokens or credit cards that can be visited in the parameters of the query for the ur,.
+```
+* miweb.com?color=red
+```
+
+### STRUCTURE
+Add ? at the end of the URL.
+```
+* name=value&id=3
+```
+
+We separate with & if it's more than 2 parameter.
