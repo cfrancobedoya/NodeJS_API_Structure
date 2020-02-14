@@ -155,3 +155,7 @@ res.header({
 * Plane text
 * With data
 * Structured
+
+---
+## Consistent answers
+We create the response file, to generalize responses and be more consistent with our backend.

@@ -1,5 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+
+const response = require('./network/response')
+
 const router = express.Router();
 
 var app = express();
@@ -12,18 +15,26 @@ router.get('/', function (req, res) {
         "custom-header": "Our custom value. Developed by Cristian Franco",
     });
     console.log(req.headers)
-    res.send('Hello from get');
+    // res.send('Hello from get');
+    response.succes(req, res, 'First answer', 200);
 });
 router.post('/', function (req, res) {
+    console.log(req.query);
+    if (req.query.error == 'ok') {
+        response.error(req, res, 'Errror simulado', 400);
+    } else {
+        response.succes(req, res, 'Created correctly', 201);
+    }
+});
+
+router.patch('/', function (req, res) {
+    res.send('Hello from patch');
     // WITH DATA
     res.status(201).send({error: '', body: 'Created correctly'});
     // PLAIN
     res.send('Hello from post');
     // EMPTY
     res.send();
-});
-router.patch('/', function (req, res) {
-    res.send('Hello from patch');
 });
 router.delete('/message', function (req, res) {
     console.log(req.query);
