@@ -111,8 +111,26 @@ Run the server
 $ node server
 ```
 
+---
 ## How request can come
 * Post
 * Delete
 * Get
 * Patch
+
+---
+### Receive information from the client: Body and Query
+Update the server when we make changes to the code.
+```
+$ sudo npm install -g nodemon
+```
+
+We install the express module to work with the body.
+```
+$ npm i body-parser
+```
+
+We send parameters to the request.
+```
+ http://localhost:3000/message?orderBy=id
+```

@@ -1,9 +1,11 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const router = express.Router();
 
 var app = express();
-
 app.use(router);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
 router.get('/', function (req, res) {
     res.send('Hello from get');
@@ -14,8 +16,10 @@ router.post('/', function (req, res) {
 router.patch('/', function (req, res) {
     res.send('Hello from patch');
 });
-router.delete('/', function (req, res) {
-    res.send('Hello from delete');
+router.delete('/message', function (req, res) {
+    console.log(req.query);
+    // console.log(req.body);
+    res.send('Hello from delete ' + req.query.text + ' added correctly');
 });
 
 // app.use('/', function (req, res) {
