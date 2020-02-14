@@ -93,3 +93,20 @@ Add ? at the end of the URL.
 ```
 
 We separate with & if it's more than 2 parameter.
+
+---
+## Create an HTTP server from NodeJS
+We start the project structure.
+```
+$ npm init
+```
+
+We install express to handle the connections.
+```
+$ npm i express
+```
+
+Run the server
+```
+$ node server
+```
