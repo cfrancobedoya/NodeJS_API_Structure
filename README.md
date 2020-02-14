@@ -119,7 +119,7 @@ $ node server
 * Patch
 
 ---
-### Receive information from the client: Body and Query
+## Receive information from the client: Body and Query
 Update the server when we make changes to the code.
 ```
 $ sudo npm install -g nodemon
@@ -133,4 +133,18 @@ $ npm i body-parser
 We send parameters to the request.
 ```
  http://localhost:3000/message?orderBy=id
+```
+
+---
+## Contextual information: Read the headers
+To print the headers:
+```
+console.log(req.headers)
+```
+
+To modify the headers:
+```
+res.header({
+        "custom-header": "Our custom value. Developed by C",
+});
 ```

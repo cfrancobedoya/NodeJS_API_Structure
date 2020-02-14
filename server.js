@@ -8,6 +8,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 router.get('/', function (req, res) {
+    res.header({
+        "custom-header": "Our custom value. Developed by Cristian Franco",
+    });
+    console.log(req.headers)
     res.send('Hello from get');
 });
 router.post('/', function (req, res) {
