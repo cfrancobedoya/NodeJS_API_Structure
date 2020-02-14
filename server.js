@@ -15,7 +15,12 @@ router.get('/', function (req, res) {
     res.send('Hello from get');
 });
 router.post('/', function (req, res) {
+    // WITH DATA
+    res.status(201).send({error: '', body: 'Created correctly'});
+    // PLAIN
     res.send('Hello from post');
+    // EMPTY
+    res.send();
 });
 router.patch('/', function (req, res) {
     res.send('Hello from patch');

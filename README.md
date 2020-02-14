@@ -148,3 +148,10 @@ res.header({
         "custom-header": "Our custom value. Developed by C",
 });
 ```
+
+---
+## Response types
+* Empty: Dosn't return body.
+* Plane text
+* With data
+* Structured
