@@ -110,3 +110,9 @@ Run the server
 ```
 $ node server
 ```
+
+## How request can come
+* Post
+* Delete
+* Get
+* Patch
