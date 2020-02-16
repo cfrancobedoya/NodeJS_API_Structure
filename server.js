@@ -21,7 +21,7 @@ router.get('/', function (req, res) {
 router.post('/', function (req, res) {
     console.log(req.query);
     if (req.query.error == 'ok') {
-        response.error(req, res, 'Errror simulado', 400);
+        response.error(req, res, 'Unexpected error', 500, 'It is just a simulation');
     } else {
         response.succes(req, res, 'Created correctly', 201);
     }

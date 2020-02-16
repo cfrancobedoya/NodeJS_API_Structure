@@ -163,3 +163,7 @@ We create the response file, to generalize responses and be more consistent with
 ---
 ## Serve static files
 Usin express, we handle static files like html or css.
+
+---
+## Errors: How to present them and security implications.
+Never send confidential information of errors to the client.
