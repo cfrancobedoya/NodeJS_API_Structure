@@ -46,5 +46,7 @@ router.delete('/message', function (req, res) {
 //     res.send('Hello');
 // });
 
+app.use('/app', express.static('public'));
+
 app.listen(3000);
 console.log('The application is listening on http://localhost:3000');

@@ -159,3 +159,7 @@ res.header({
 ---
 ## Consistent answers
 We create the response file, to generalize responses and be more consistent with our backend.
+
+---
+## Serve static files
+Usin express, we handle static files like html or css.
