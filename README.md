@@ -175,3 +175,7 @@ We separeate the nework of the server and create a component network administrat
 ---
 ## Controllers: Defining the business logic
 Defining the business logic.
+
+---
+## Storing information in a database
+We create the data layer of the user component.
