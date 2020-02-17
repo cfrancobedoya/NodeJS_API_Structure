@@ -177,5 +177,14 @@ We separeate the nework of the server and create a component network administrat
 Defining the business logic.
 
 ---
-## Storing information in a database
+## Storing information in a database 
 We create the data layer of the user component.
+
+---
+## Types of database: 
+### Relational databases:
+It is not a very flexible database, but ut has in favor its great support and the enormous develpment in tools for its use. If we need to change a value of a field, we must do it with all the fields of our DB, however with NoSQL or Non-relational it is not like that.
+
+### Non-Relational databases:
+They are from databases without a fixed table such as those found in relational databases, witch allows a high scalability of them. In addition, it's open and therefore flexible to different types of data and does not need so many resources to run; In fact, the necessary hardware dos not cost much.
+
