@@ -167,3 +167,7 @@ Usin express, we handle static files like html or css.
 ---
 ## Errors: How to present them and security implications.
 Never send confidential information of errors to the client.
+
+---
+## Routes and network layer: Responsabilities and limits
+We separeate the nework of the server and create a component network administrator.

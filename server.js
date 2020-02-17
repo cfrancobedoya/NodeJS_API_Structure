@@ -1,50 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const response = require('./network/response')
-
-const router = express.Router();
+// const router = require('./components/message/network');
+const router = require('./network/routes');
 
 var app = express();
-app.use(router);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-
-router.get('/', function (req, res) {
-    res.header({
-        "custom-header": "Our custom value. Developed by Cristian Franco",
-    });
-    console.log(req.headers)
-    // res.send('Hello from get');
-    response.succes(req, res, 'First answer', 200);
-});
-router.post('/', function (req, res) {
-    console.log(req.query);
-    if (req.query.error == 'ok') {
-        response.error(req, res, 'Unexpected error', 500, 'It is just a simulation');
-    } else {
-        response.succes(req, res, 'Created correctly', 201);
-    }
-});
-
-router.patch('/', function (req, res) {
-    res.send('Hello from patch');
-    // WITH DATA
-    res.status(201).send({error: '', body: 'Created correctly'});
-    // PLAIN
-    res.send('Hello from post');
-    // EMPTY
-    res.send();
-});
-router.delete('/message', function (req, res) {
-    console.log(req.query);
-    // console.log(req.body);
-    res.send('Hello from delete ' + req.query.text + ' added correctly');
-});
-
-// app.use('/', function (req, res) {
-//     res.send('Hello');
-// });
+// app.use(router);
+router(app);
 
 app.use('/app', express.static('public'));
 
