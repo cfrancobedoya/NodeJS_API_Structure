@@ -171,3 +171,7 @@ Never send confidential information of errors to the client.
 ---
 ## Routes and network layer: Responsabilities and limits
 We separeate the nework of the server and create a component network administrator.
+
+---
+## Controllers: Defining the business logic
+Defining the business logic.

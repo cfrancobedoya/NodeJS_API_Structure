@@ -1,6 +1,6 @@
 const express = require('express');
 const response = require('../../network/response');
-
+const controller = require('./controller');
 const router = express.Router();
 
 router.get('/', function (req, res) {
@@ -12,12 +12,13 @@ router.get('/', function (req, res) {
 });
 
 router.post('/', function (req, res) {
-    console.log(req.query);
-    if (req.query.error == "ok") {
-        response.error(req, res, 'Unexpected error', 500, 'It is just a simulation error');
-    } else {
-        response.succes(req, res, 'Created correctly');
-    }
+    controller.addMessage(req.body.user, req.body.message)
+        .then((fullMessage) => {
+            response.succes(req, res, fullMessage, 201);
+        })
+        .catch(e => {
+            response.error(req, res, 'Invalid information', 400, 'Controller error');
+        });
 });
 
 module.exports = router;
