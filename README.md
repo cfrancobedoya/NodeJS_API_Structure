@@ -198,3 +198,7 @@ $ npm i mongoose & mongodb
 ---
 ## MongoDB: Consult data
 We filter the list based on data received by parameters.
+
+---
+## MongoDB: Delete data
+We check not to have an invalid ID and then delete the data
