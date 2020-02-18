@@ -188,3 +188,9 @@ It is not a very flexible database, but ut has in favor its great support and th
 ### Non-Relational databases:
 They are from databases without a fixed table such as those found in relational databases, witch allows a high scalability of them. In addition, it's open and therefore flexible to different types of data and does not need so many resources to run; In fact, the necessary hardware dos not cost much.
 
+---
+## MongoDB: Store and read data
+We install mongoose to handle the schemes.
+```
+$ npm i mongoose & mongodb
+```
