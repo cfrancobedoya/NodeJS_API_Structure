@@ -201,4 +201,8 @@ We filter the list based on data received by parameters.
 
 ---
 ## MongoDB: Delete data
-We check not to have an invalid ID and then delete the data
+We check not to have an invalid ID and then delete the data.
+
+---
+## Manage connections to the database from the API
+We refactor our code to have everithing organized in a better way, we create a db.js file where we will have all the data of our connection to the database.
