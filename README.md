@@ -194,3 +194,7 @@ We install mongoose to handle the schemes.
 ```
 $ npm i mongoose & mongodb
 ```
+
+---
+## MongoDB: Consult data
+We filter the list based on data received by parameters.
