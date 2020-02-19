@@ -5,7 +5,7 @@ function addUser(user) {
     return myUser.save();
 }
 
-async function getUser(filterUser) {
+async function listUsers(filterUser) {
     let filter = {};
     if (filterUser !== null) {
         filter = { name: filterUser };
@@ -17,5 +17,5 @@ async function getUser(filterUser) {
 
 module.exports = {
     add: addUser,
-    list: getUser
+    list: listUsers
 }

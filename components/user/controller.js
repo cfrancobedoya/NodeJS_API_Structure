@@ -12,7 +12,7 @@ function addUser(name) {
     return store.add(user);
 }
 
-function getUsers(filterUser) {
+function listUsers(filterUser) {
     return new Promise((resolve, reject) => {
         resolve(store.list(filterUser));
     });
@@ -20,5 +20,5 @@ function getUsers(filterUser) {
 
 module.exports = {
     addUser,
-    getUsers
+    listUsers
 }

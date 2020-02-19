@@ -15,7 +15,7 @@ router.post('/', function(req, res) {
 
 router.get('/', function (req, res) {
     const filterUsers = req.query.name || null;
-    controller.getUsers(filterUsers)
+    controller.listUsers(filterUsers)
         .then((userList) => {
             response.succes(req, res, userList, 200);
         })
