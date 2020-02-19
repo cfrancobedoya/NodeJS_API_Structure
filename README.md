@@ -206,3 +206,7 @@ We check not to have an invalid ID and then delete the data.
 ---
 ## Manage connections to the database from the API
 We refactor our code to have everithing organized in a better way, we create a db.js file where we will have all the data of our connection to the database.
+
+---
+## Scaling the architecture: Multiple entities
+We add the user component, based on the message component.
