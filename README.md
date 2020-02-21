@@ -212,5 +212,12 @@ We refactor our code to have everithing organized in a better way, we create a d
 We add the user component, based on the message component.
 
 ---
-## Relating our entities
+## Entity-Relationship Model
 We relate the user entity to the message entity and in turn we create a chat entity that relates these two entities.
+
+---
+## How to receive files from NodeJS
+### Install multer
+```
+    $ npm install multer
+```
