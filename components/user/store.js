@@ -5,13 +5,8 @@ function addUser(user) {
     return myUser.save();
 }
 
-async function listUsers(filterUser) {
-    let filter = {};
-    if (filterUser !== null) {
-        filter = { name: filterUser };
-    }
-    const users = await Model.find(filter);
-    return users;
+function listUsers() {
+    return Model.find();
 }
 
 

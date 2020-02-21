@@ -210,3 +210,7 @@ We refactor our code to have everithing organized in a better way, we create a d
 ---
 ## Scaling the architecture: Multiple entities
 We add the user component, based on the message component.
+
+---
+## Relating our entities
+We relate the user entity to the message entity and in turn we create a chat entity that relates these two entities.
