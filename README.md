@@ -221,3 +221,7 @@ We relate the user entity to the message entity and in turn we create a chat ent
 ```
     $ npm install multer
 ```
+
+---
+## Save the file to the server
+Added path.
