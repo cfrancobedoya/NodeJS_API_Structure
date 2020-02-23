@@ -9,8 +9,7 @@ function listUsers() {
     return Model.find();
 }
 
-
 module.exports = {
     add: addUser,
-    list: listUsers
+    list: listUsers,
 }

@@ -1,6 +1,8 @@
 const store = require('./store');
+const socket = require('../../socket').socket;
+const config = require('../../config');
 
-function addMessage(user, message, file) {
+function addMessage(chat, user, message, file) {
     return new Promise((resolve, reject) => {
         if (!chat || !user || !message) {
             console.error('[messageController] There is not chat, user or message.')
@@ -10,7 +12,7 @@ function addMessage(user, message, file) {
 
         let fileUrl = '';
         if (file) {
-            fileUrl = 'http://localhost:3000/app/files/' + file.fileName
+            fileUrl = config.host + ':' + config.port + config.publicRoute + '/'+ config.filesRoute + '/' + file.filename;
         }
 
         const fullMessage = {
@@ -19,17 +21,20 @@ function addMessage(user, message, file) {
             message: message,
             date: new Date(),
             file: fileUrl,
-        }
+        };
+    
         store.add(fullMessage);
+
+        socket.io.emit('message', fullMessage);
 
         resolve(fullMessage);
     });
 }
 
-function getMessages(filterUser) {
+function getMessages(filterChat) {
     return new Promise((resolve, reject) => {
-        resolve(store.list(filterUser));
-    });
+        resolve(store.list(filterChat));
+    })
 }
 
 function updateMessage(id, message) {
@@ -40,6 +45,7 @@ function updateMessage(id, message) {
             reject('Invalid data');
             return false;
         }
+
         const result = await store.updateText(id, message);
 
         resolve(result);
@@ -52,6 +58,7 @@ function deleteMessage(id) {
             reject('Invalid Id');
             return false;
         }
+
         store.remove(id)
             .then(() => {
                 resolve();
@@ -66,5 +73,5 @@ module.exports = {
     addMessage,
     getMessages,
     updateMessage,
-    deleteMessage
-}
+    deleteMessage,
+};

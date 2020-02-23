@@ -5,11 +5,11 @@ function addMessage(message) {
     myMessage.save();
 }
 
-async function getMessage(filterUser) {
+async function getMessages(filterChat) {
     return new Promise((resolve, reject) => {
         let filter = {};
-        if (filterUser !== null) {
-            filter = { _id: filterUser };
+        if (filterChat !== null) {
+            filter = { chat: filterChat };
         }
         Model.find(filter)
             .populate('user')
@@ -20,8 +20,14 @@ async function getMessage(filterUser) {
                 }
 
                 resolve(populated);
-            })
+            });
     })
+}
+
+function removeMessage(id) {
+    return Model.deleteOne({
+        _id: id
+    });
 }
 
 async function updateText(id, message) {
@@ -35,15 +41,9 @@ async function updateText(id, message) {
     return newMessage;
 }
 
-function removeMessage(id) {
-    return Model.deleteOne({
-        _id: id
-    });
-}
-
 module.exports = {
     add: addMessage,
-    list: getMessage,
+    list: getMessages,
     updateText: updateText,
-    remove: removeMessage
+    remove: removeMessage,
 }
