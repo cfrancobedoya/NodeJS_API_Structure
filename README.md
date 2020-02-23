@@ -225,3 +225,7 @@ We relate the user entity to the message entity and in turn we create a chat ent
 ---
 ## Save the file to the server
 Added path.
+
+---
+## WebSockets
+The Websocket or wss:// protocol creates an information tunnel between the user and the server wich will remain open until the server or the client close the connection to request real-time information.
